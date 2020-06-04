@@ -20,8 +20,8 @@ namespace SQLETL.MySQLModels
         public string Mark { get; set; }
         public string Describe { get; set; }
         public string Hierarchy { get; set; }
-        public string Custom1 { get; set; }
-        public string Custom2 { get; set; }
         public int Sort { get; set; }
+        public string Icon { get; set; }
+        public string Link { get; set; }
     }
 }

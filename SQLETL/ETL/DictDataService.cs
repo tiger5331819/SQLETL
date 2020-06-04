@@ -23,7 +23,7 @@ namespace SQLETL.ETL
             var dicClass = db.DictClass.Where(DictClass => DictClass.DcsId == source.DcsId).FirstOrDefault();
             if (dicClass == null) return null;
             var dicFather = dbmysql.Dict.Where(Dict => Dict.Custom1 == source.DcsId).First();
-            
+
 
             string id = Guid.NewGuid().ToString("N");
             return new Dict()

@@ -18,17 +18,17 @@ namespace SQLETL.ETL
         protected override Menu DataTransfer(TreeStructure source)
         {
             using var db = new DGCNHXCDataPermissionContext();
-            var dictData=db.DictData.Where(DictData => DictData.DdaId == source.TseClassId).First();
+            var dictData = db.DictData.Where(DictData => DictData.DdaId == source.TseClassId).First();
             var dictClass = db.DictClass.Where(DictClass => DictClass.DcsId == dictData.DcsId).First();
 
-            return new Menu() 
+            return new Menu()
             {
                 AppId = dictClass.AioId.ToString("N"),
                 CreateBy = source.CreateBy,
                 CreateId = source.CreateId,
                 CreateTime = source.CreateTime.Value,
-                Custom1 = "",
-                Custom2 = "",
+                Icon =source.TseIcon,
+                Link =source.TseLink,
                 Describe = source.TseDescribe,
                 Hierarchy = source.TseHierarchy.Substring(source.TseClassId.Length + 1),
                 Id = source.TseId,
